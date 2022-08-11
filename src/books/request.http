@@ -1,0 +1,10 @@
+###Create A book
+POST http://localhost:3000/books/createBook HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Oliver Twist",
+    "author":"Charles Dickens",
+    "price" : "39",
+    "description" : "Oliver Twist, or the Parish Boy's Progress, Charles Dickens's second novel, was published as a serial from 1837 to 1839, and as a three-volume book in 1838. Born in a workhouse, the orphan Oliver Twist is sold into apprenticeship with an undertaker."
+}
