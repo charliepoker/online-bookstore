@@ -7,8 +7,13 @@ import { Book } from './book.entity';
 export class BooksService {
   constructor(@InjectRepository(Book) private repo: Repository<Book>) {}
 
-  createBook(title: string, author: string, description: string) {
-    const book = this.repo.create({ title, author, description });
+  createBook(
+    title: string,
+    author: string,
+    price: number,
+    description: string,
+  ) {
+    const book = this.repo.create({ title, author, price, description });
 
     return this.repo.save(book);
   }
