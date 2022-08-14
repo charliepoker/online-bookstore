@@ -1,4 +1,4 @@
-import { Controller, Body, Post } from '@nestjs/common';
+import { Controller, Body, Post, Get, NotFoundException } from '@nestjs/common';
 import { BooksService } from './books.service';
 import { CreateBookDto } from './dtos/create-book.dto';
 
@@ -15,6 +15,15 @@ export class BooksController {
       body.description,
     );
 
+    return book;
+  }
+
+  @Get('/:id')
+  async getBooks(id: number) {
+    const book = await this.booksService.findOne(id);
+    if (!book) {
+      throw new NotFoundException('book not found');
+    }
     return book;
   }
 }

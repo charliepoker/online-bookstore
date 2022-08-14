@@ -19,9 +19,9 @@ export class BooksService {
   }
 
   findOne(id: number) {
-    if (!id) {
-      return null;
-    }
+    // if (!id) {
+    //   return null;
+    // }
     return this.repo.findOne({
       where: {
         id: id,

@@ -8,7 +8,7 @@ import {
 
 @Entity()
 export class Book {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ length: 500 })
